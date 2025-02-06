@@ -17,7 +17,8 @@
       "bundleIdentifier": "com.brandonscode.traveltracker",
       "buildNumber": "3.2.1",
       "infoPlist": {
-        "NSLocationAlwaysUsageDescription": "requires location data"
+        "NSLocationAlwaysUsageDescription": "requires location data",
+        "ITSAppUsesNonExemptEncryption": false
       },
       "splash": {
         "backgroundColor": "#4f447b"
@@ -26,7 +27,10 @@
         "aps-environment": "development"
       }
     },
-    "platforms": ["android", "ios"],
+    "platforms": [
+      "android",
+      "ios"
+    ],
     "extra": {
       "eas": {
         "projectId": "7e6b3360-2e56-11e8-8b1f-77efee0611f2"
