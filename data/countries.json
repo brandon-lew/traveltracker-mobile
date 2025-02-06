@@ -17,7 +17,7 @@
   {
     "name": "Anguilla",
     "continent": "North America",
-    "latlng": ["18.25", "-63.16666666"]
+    "latlng": ["18.2206", "-63.0686"]
   },
   {
     "name": "Åland Islands",
@@ -127,7 +127,7 @@
   {
     "name": "Saint Barthélemy",
     "continent": "North America",
-    "latlng": ["18.5", "-63.41666666"]
+    "latlng": ["17.9", "-62.83333"]
   },
   {
     "name": "Belarus",
@@ -662,7 +662,7 @@
   {
     "name": "Saint Martin",
     "continent": "North America",
-    "latlng": ["18.08333333", "-63.95"]
+    "latlng": ["18.0708", "-63.0501"]
   },
   {
     "name": "Morocco",
