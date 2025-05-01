@@ -47,6 +47,7 @@ export default MyMapScreen = ({ navigation }) => {
     <View style={{ flex: 1 }}>
       <StatusBar barStyle='light-content' />
       <MapView
+        key={markersRef.current.length}
         style={{ flex: 1 }}
         initialRegion={{
           latitude: currentLat,
@@ -56,7 +57,11 @@ export default MyMapScreen = ({ navigation }) => {
         }}
       >
         {markersRef.current.map((marker, index) => (
-          <Marker key={index} coordinate={marker.coords} />
+          <Marker
+            key={index}
+            useLegacyPinView={true}
+            coordinate={marker.coords}
+          />
         ))}
       </MapView>
     </View>
