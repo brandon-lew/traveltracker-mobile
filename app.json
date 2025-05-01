@@ -4,7 +4,6 @@
     "description": "Where Next?",
     "version": "3.2.2",
     "slug": "traveltracker-mobile",
-    "privacy": "public",
     "orientation": "portrait",
     "icon": "./assets/app-store-icon.png",
     "splash": {
@@ -25,7 +24,8 @@
       },
       "entitlements": {
         "aps-environment": "development"
-      }
+      },
+      "newArchEnabled": true
     },
     "platforms": ["android", "ios"],
     "extra": {
