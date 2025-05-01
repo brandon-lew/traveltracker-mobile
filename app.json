@@ -2,9 +2,8 @@
   "expo": {
     "name": "Travel Tracker",
     "description": "Where Next?",
-    "version": "3.2.2",
+    "version": "3.3.0",
     "slug": "traveltracker-mobile",
-    "privacy": "public",
     "orientation": "portrait",
     "icon": "./assets/app-store-icon.png",
     "splash": {
@@ -15,7 +14,7 @@
     },
     "ios": {
       "bundleIdentifier": "com.brandonscode.traveltracker",
-      "buildNumber": "3.2.2",
+      "buildNumber": "3.3.0",
       "infoPlist": {
         "NSLocationAlwaysUsageDescription": "requires location data",
         "ITSAppUsesNonExemptEncryption": false
@@ -25,7 +24,8 @@
       },
       "entitlements": {
         "aps-environment": "development"
-      }
+      },
+      "newArchEnabled": true
     },
     "platforms": ["android", "ios"],
     "extra": {

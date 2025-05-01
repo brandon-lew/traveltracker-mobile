@@ -52,6 +52,7 @@ export default UserMap = (props) => {
       </View>
       <Text style={UserMapStyles.header}>User Map</Text>
       <MapView
+        key={markersRef.current.length}
         style={{ flex: 1 }}
         initialRegion={{
           latitude: currentLat,
@@ -61,7 +62,11 @@ export default UserMap = (props) => {
         }}
       >
         {markersRef.current.map((marker, index) => (
-          <Marker key={index} coordinate={marker.coords} />
+          <Marker
+            key={index}
+            useLegacyPinView={true}
+            coordinate={marker.coords}
+          />
         ))}
       </MapView>
     </View>
