@@ -11,6 +11,13 @@
     "submit": "eas submit -p ios"
   },
   "private": true,
+  "expo": {
+    "doctor": {
+      "reactNativeDirectoryCheck": {
+        "listUnknownPackages": false
+      }
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blsnwbrdr/traveltracker-mobile.git"
