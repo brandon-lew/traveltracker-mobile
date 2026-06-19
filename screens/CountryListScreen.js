@@ -47,7 +47,7 @@ const CountryListScreen = () => {
       const visitedData = JSON.parse(result);
       let list = [];
       if (visitedData && visitedData.checked !== null) {
-        for (x = 0; x < visitedData.checked.length; x++) {
+        for (let x = 0; x < visitedData.checked.length; x++) {
           list.push(visitedData.checked[x]);
         }
         setChecked(list);
@@ -60,7 +60,7 @@ const CountryListScreen = () => {
     setSelectedContinent(continent);
     let list = [];
     if (continent !== 'All') {
-      for (x = 0; x < countryData.length; x++) {
+      for (let x = 0; x < countryData.length; x++) {
         if (continent === countryData[x].continent) {
           list.push(countryData[x]);
         }

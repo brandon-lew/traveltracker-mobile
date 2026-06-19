@@ -23,8 +23,8 @@ const MyMapScreen = ({ navigation }) => {
         const visitedData = JSON.parse(result);
         let list = [];
         if (visitedData && visitedData.checked !== null) {
-          for (x = 0; x < visitedData.checked.length; x++) {
-            for (i = 0; i < countryData.length; i++) {
+          for (let x = 0; x < visitedData.checked.length; x++) {
+            for (let i = 0; i < countryData.length; i++) {
               if (visitedData.checked[x] === countryData[i].name) {
                 list.push(countryData[i].latlng);
               }

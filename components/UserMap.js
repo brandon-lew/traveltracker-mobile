@@ -22,8 +22,8 @@ const UserMap = (props) => {
   // GET USER LIST OF CHECKED COUNTRIES
   useEffect(() => {
     let list = [];
-    for (x = 0; x < props.searchResultList.length; x++) {
-      for (i = 0; i < countryData.length; i++) {
+    for (let x = 0; x < props.searchResultList.length; x++) {
+      for (let i = 0; i < countryData.length; i++) {
         if (props.searchResultList[x] === countryData[i].name) {
           list.push(countryData[i].latlng);
         }
