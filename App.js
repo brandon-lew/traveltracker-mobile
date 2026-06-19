@@ -7,7 +7,7 @@ import MainNavigation from './navigation/MainNavigation';
 
 SplashScreen.preventAutoHideAsync();
 
-export default App = () => {
+const App = () => {
   const [appIsReady, setAppIsReady] = useState(false);
 
   useEffect(() => {
@@ -43,3 +43,5 @@ export default App = () => {
     </View>
   );
 };
+
+export default App;

@@ -15,7 +15,7 @@ import { colorQuaternary, colorDarkGrey } from './../styles/Constants';
 // DEFINE TAB AS BOTTOM TAB NAVIGATOR
 const Tab = createBottomTabNavigator();
 
-export default MainNavigation = () => {
+const MainNavigation = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -52,3 +52,5 @@ export default MainNavigation = () => {
     </NavigationContainer>
   );
 };
+
+export default MainNavigation;
