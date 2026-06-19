@@ -12,7 +12,7 @@ import MyListStyles from './../styles/MyListStyles';
 // JSON DATA
 const countryData = require('./../data/countries.json');
 
-export default MyListScreen = ({ navigation }) => {
+const MyListScreen = ({ navigation }) => {
   const [checked, _setChecked] = useState([]);
   const checkedRef = useRef(checked);
   const setChecked = (newChecked) => {
@@ -33,7 +33,7 @@ export default MyListScreen = ({ navigation }) => {
         const visitedData = JSON.parse(result);
         let list = [];
         if (visitedData && visitedData.checked !== null) {
-          for (x = 0; x < visitedData.checked.length; x++) {
+          for (let x = 0; x < visitedData.checked.length; x++) {
             list.push(visitedData.checked[x]);
           }
           list.sort();
@@ -72,3 +72,5 @@ export default MyListScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+
+export default MyListScreen;

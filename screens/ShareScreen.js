@@ -12,7 +12,7 @@ import UserMap from '../components/UserMap';
 // STYLES
 import ShareStyles from './../styles/ShareStyles';
 
-export default ShareScreen = () => {
+const ShareScreen = () => {
   const [username, _setUsername] = useState('');
   const usernameRef = useRef(username);
   const setUsername = (newUsername) => {
@@ -75,7 +75,7 @@ export default ShareScreen = () => {
                 'Content-Type': 'application/json',
               },
               body: username,
-            }
+            },
           )
             .then((res) => res.text())
             .then((bodyText) => {
@@ -153,7 +153,7 @@ export default ShareScreen = () => {
             setUsernameInputDisplay(true);
           },
         },
-      ]
+      ],
     );
   };
 
@@ -172,7 +172,7 @@ export default ShareScreen = () => {
           setSearchResultList('');
           setSearchResultListCount('');
           fetch(
-            `https://brandonscode.herokuapp.com/traveltracker/search/username/${searchInputText}`
+            `https://brandonscode.herokuapp.com/traveltracker/search/username/${searchInputText}`,
           )
             // fetch(`http://localhost:5000/traveltracker/search/username/${searchInputText}`)
             .then((res) => res.json())
@@ -261,3 +261,4 @@ export default ShareScreen = () => {
     </SafeAreaView>
   );
 };
+export default ShareScreen;

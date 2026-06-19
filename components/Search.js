@@ -12,7 +12,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { colorMediumGrey } from './../styles/Constants';
 import SearchStyles from './../styles/SearchStyles';
 
-export default Search = (props) => {
+const Search = (props) => {
   return (
     <View style={SearchStyles.container}>
       <Text style={SearchStyles.header}>Search Users</Text>
@@ -57,3 +57,5 @@ export default Search = (props) => {
     </View>
   );
 };
+
+export default Search;
