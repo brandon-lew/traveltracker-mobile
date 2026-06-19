@@ -9,7 +9,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { Button } from '@rneui/themed';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -102,7 +101,7 @@ export default CountryListScreen = () => {
             saveChecked(null);
           },
         },
-      ]
+      ],
     );
   };
 
@@ -112,22 +111,36 @@ export default CountryListScreen = () => {
   // CHECKBOX - RENDER ITEM
   const renderItem = ({ item }) => {
     return (
-      <Button
-        containerStyle={CountryListStyles.listButtonContainer}
-        buttonStyle={
-          checkedRef.current.includes(item.name)
-            ? CountryListStyles.listButtonChecked
-            : CountryListStyles.listButtonUnchecked
-        }
-        titleStyle={
-          checkedRef.current.includes(item.name)
-            ? CountryListStyles.listButtonTitleChecked
-            : CountryListStyles.listButtonTitleUnchecked
-        }
-        title={item.name}
-        type='outline'
+      <TouchableOpacity
+        style={CountryListStyles.listButtonContainer}
         onPress={() => onPressSetChecked(item.name)}
-      />
+      >
+        <View
+          style={[
+            {
+              borderWidth: 1,
+              borderRadius: 4,
+              paddingVertical: 10,
+              paddingHorizontal: 15,
+              alignItems: 'center',
+              justifyContent: 'center',
+            },
+            checkedRef.current.includes(item.name)
+              ? CountryListStyles.listButtonChecked
+              : CountryListStyles.listButtonUnchecked,
+          ]}
+        >
+          <Text
+            style={
+              checkedRef.current.includes(item.name)
+                ? CountryListStyles.listButtonTitleChecked
+                : CountryListStyles.listButtonTitleUnchecked
+            }
+          >
+            {item.name}
+          </Text>
+        </View>
+      </TouchableOpacity>
     );
   };
 
