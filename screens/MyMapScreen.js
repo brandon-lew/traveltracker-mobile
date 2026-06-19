@@ -61,6 +61,7 @@ const MyMapScreen = ({ navigation }) => {
             key={index}
             useLegacyPinView={true}
             coordinate={marker.coords}
+            centerOffset={{ x: 7, y: -16 }}
           />
         ))}
       </MapView>
