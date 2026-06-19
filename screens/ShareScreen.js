@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { SafeAreaView, StatusBar, View, Alert } from 'react-native';
+import { StatusBar, View, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import NetInfo from '@react-native-community/netinfo';
 
@@ -224,7 +225,7 @@ const ShareScreen = () => {
   };
 
   return (
-    <SafeAreaView style={ShareStyles.safeViewContainer}>
+    <SafeAreaView style={ShareStyles.safeViewContainer} edges={['top']}>
       <StatusBar barStyle='light-content' />
       <View style={ShareStyles.container}>
         {usernameInputDisplayRef.current ? (
