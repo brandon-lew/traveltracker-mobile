@@ -24,21 +24,14 @@
       },
       "entitlements": {
         "aps-environment": "development"
-      },
-      "newArchEnabled": true
+      }
     },
-    "platforms": [
-      "android",
-      "ios"
-    ],
+    "platforms": ["android", "ios"],
     "extra": {
       "eas": {
         "projectId": "7e6b3360-2e56-11e8-8b1f-77efee0611f2"
       }
     },
-    "plugins": [
-      "expo-asset",
-      "expo-font"
-    ]
+    "plugins": ["expo-asset", "expo-font"]
   }
 }
