@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  SafeAreaView,
   StatusBar,
   FlatList,
   View,
@@ -8,6 +7,7 @@ import {
   Alert,
   TouchableOpacity,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Picker } from '@react-native-picker/picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FontAwesome } from '@expo/vector-icons';
@@ -145,7 +145,7 @@ const CountryListScreen = () => {
   };
 
   return (
-    <SafeAreaView style={CountryListStyles.safeViewContainer}>
+    <SafeAreaView style={CountryListStyles.safeViewContainer} edges={['top']}>
       <StatusBar barStyle='light-content' />
       <View style={CountryListStyles.container}>
         <Header />
