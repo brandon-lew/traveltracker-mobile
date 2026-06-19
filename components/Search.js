@@ -50,7 +50,6 @@ const Search = (props) => {
       )}
       <FlatList
         data={props.searchResultList}
-        extraData={this.state}
         keyExtractor={(x, i) => i.toString()}
         renderItem={({ item }) => <Text style={SearchStyles.list}>{item}</Text>}
       />
