@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 // JSON DATA
 const countryData = require('./../data/countries.json');
 
-export default MyMapScreen = ({ navigation }) => {
+const MyMapScreen = ({ navigation }) => {
   const [currentLat, setCurrentLat] = useState(38);
   const [currentLng, setCurrentLng] = useState(-97);
   const [markers, _setMarkers] = useState([]);
@@ -67,3 +67,5 @@ export default MyMapScreen = ({ navigation }) => {
     </View>
   );
 };
+
+export default MyMapScreen;

@@ -9,7 +9,7 @@ import UserMapStyles from './../styles/UserMapStyles';
 // JSON DATA
 const countryData = require('./../data/countries.json');
 
-export default UserMap = (props) => {
+const UserMap = (props) => {
   const [currentLat, setCurrentLat] = useState(38);
   const [currentLng, setCurrentLng] = useState(-97);
   const [markers, _setMarkers] = useState([]);
@@ -72,3 +72,5 @@ export default UserMap = (props) => {
     </View>
   );
 };
+
+export default UserMap;

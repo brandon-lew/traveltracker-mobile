@@ -30,7 +30,7 @@ function compare(a, b) {
 }
 countryData.sort(compare);
 
-export default CountryListScreen = () => {
+const CountryListScreen = () => {
   const [checked, _setChecked] = useState([]);
   const checkedRef = useRef(checked);
   const setChecked = (newChecked) => {
@@ -197,3 +197,5 @@ export default CountryListScreen = () => {
     </SafeAreaView>
   );
 };
+
+export default CountryListScreen;

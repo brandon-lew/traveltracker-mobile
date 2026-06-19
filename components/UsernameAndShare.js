@@ -5,7 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 // STYLES
 import UsernameAndShareStyles from './../styles/UsernameAndShareStyles';
 
-export default UsernameAndShare = (props) => {
+const UsernameAndShare = (props) => {
   return (
     <View>
       <View style={UsernameAndShareStyles.deleteButtonContainer}>
@@ -40,3 +40,5 @@ export default UsernameAndShare = (props) => {
     </View>
   );
 };
+
+export default UsernameAndShare;

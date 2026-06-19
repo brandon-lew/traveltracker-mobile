@@ -5,7 +5,7 @@ import { View, TextInput, Text } from 'react-native';
 import { colorMediumGrey } from './../styles/Constants';
 import UsernameInputStyles from './../styles/UsernameInputStyles';
 
-export default UsernameInput = (props) => {
+const UsernameInput = (props) => {
   return (
     <View style={UsernameInputStyles.container}>
       <Text style={UsernameInputStyles.header}>Create a username</Text>
@@ -28,3 +28,5 @@ export default UsernameInput = (props) => {
     </View>
   );
 };
+
+export default UsernameInput;
