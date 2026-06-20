@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { SafeAreaView, StatusBar, FlatList, View, Text } from 'react-native';
+import { StatusBar, FlatList, View, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // COMPONENTS
@@ -12,7 +13,7 @@ import MyListStyles from './../styles/MyListStyles';
 // JSON DATA
 const countryData = require('./../data/countries.json');
 
-export default MyListScreen = ({ navigation }) => {
+const MyListScreen = ({ navigation }) => {
   const [checked, _setChecked] = useState([]);
   const checkedRef = useRef(checked);
   const setChecked = (newChecked) => {
@@ -33,7 +34,7 @@ export default MyListScreen = ({ navigation }) => {
         const visitedData = JSON.parse(result);
         let list = [];
         if (visitedData && visitedData.checked !== null) {
-          for (x = 0; x < visitedData.checked.length; x++) {
+          for (let x = 0; x < visitedData.checked.length; x++) {
             list.push(visitedData.checked[x]);
           }
           list.sort();
@@ -50,7 +51,7 @@ export default MyListScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <SafeAreaView style={MyListStyles.safeViewContainer}>
+    <SafeAreaView style={MyListStyles.safeViewContainer} edges={['top']}>
       <StatusBar barStyle='light-content' />
       <View style={MyListStyles.container}>
         <Header />
@@ -72,3 +73,5 @@ export default MyListScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+
+export default MyListScreen;

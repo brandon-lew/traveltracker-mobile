@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { SafeAreaView, StatusBar, View, Alert } from 'react-native';
+import { StatusBar, View, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import NetInfo from '@react-native-community/netinfo';
 
@@ -12,7 +13,7 @@ import UserMap from '../components/UserMap';
 // STYLES
 import ShareStyles from './../styles/ShareStyles';
 
-export default ShareScreen = () => {
+const ShareScreen = () => {
   const [username, _setUsername] = useState('');
   const usernameRef = useRef(username);
   const setUsername = (newUsername) => {
@@ -75,7 +76,7 @@ export default ShareScreen = () => {
                 'Content-Type': 'application/json',
               },
               body: username,
-            }
+            },
           )
             .then((res) => res.text())
             .then((bodyText) => {
@@ -153,7 +154,7 @@ export default ShareScreen = () => {
             setUsernameInputDisplay(true);
           },
         },
-      ]
+      ],
     );
   };
 
@@ -172,7 +173,7 @@ export default ShareScreen = () => {
           setSearchResultList('');
           setSearchResultListCount('');
           fetch(
-            `https://brandonscode.herokuapp.com/traveltracker/search/username/${searchInputText}`
+            `https://brandonscode.herokuapp.com/traveltracker/search/username/${searchInputText}`,
           )
             // fetch(`http://localhost:5000/traveltracker/search/username/${searchInputText}`)
             .then((res) => res.json())
@@ -224,7 +225,7 @@ export default ShareScreen = () => {
   };
 
   return (
-    <SafeAreaView style={ShareStyles.safeViewContainer}>
+    <SafeAreaView style={ShareStyles.safeViewContainer} edges={['top']}>
       <StatusBar barStyle='light-content' />
       <View style={ShareStyles.container}>
         {usernameInputDisplayRef.current ? (
@@ -261,3 +262,4 @@ export default ShareScreen = () => {
     </SafeAreaView>
   );
 };
+export default ShareScreen;

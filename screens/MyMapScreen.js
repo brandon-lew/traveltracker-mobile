@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 // JSON DATA
 const countryData = require('./../data/countries.json');
 
-export default MyMapScreen = ({ navigation }) => {
+const MyMapScreen = ({ navigation }) => {
   const [currentLat, setCurrentLat] = useState(38);
   const [currentLng, setCurrentLng] = useState(-97);
   const [markers, _setMarkers] = useState([]);
@@ -23,8 +23,8 @@ export default MyMapScreen = ({ navigation }) => {
         const visitedData = JSON.parse(result);
         let list = [];
         if (visitedData && visitedData.checked !== null) {
-          for (x = 0; x < visitedData.checked.length; x++) {
-            for (i = 0; i < countryData.length; i++) {
+          for (let x = 0; x < visitedData.checked.length; x++) {
+            for (let i = 0; i < countryData.length; i++) {
               if (visitedData.checked[x] === countryData[i].name) {
                 list.push(countryData[i].latlng);
               }
@@ -61,9 +61,12 @@ export default MyMapScreen = ({ navigation }) => {
             key={index}
             useLegacyPinView={true}
             coordinate={marker.coords}
+            centerOffset={{ x: 7, y: -16 }}
           />
         ))}
       </MapView>
     </View>
   );
 };
+
+export default MyMapScreen;

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  SafeAreaView,
   StatusBar,
   FlatList,
   View,
@@ -8,8 +7,8 @@ import {
   Alert,
   TouchableOpacity,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Picker } from '@react-native-picker/picker';
-import { Button } from '@rneui/themed';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -31,7 +30,7 @@ function compare(a, b) {
 }
 countryData.sort(compare);
 
-export default CountryListScreen = () => {
+const CountryListScreen = () => {
   const [checked, _setChecked] = useState([]);
   const checkedRef = useRef(checked);
   const setChecked = (newChecked) => {
@@ -48,7 +47,7 @@ export default CountryListScreen = () => {
       const visitedData = JSON.parse(result);
       let list = [];
       if (visitedData && visitedData.checked !== null) {
-        for (x = 0; x < visitedData.checked.length; x++) {
+        for (let x = 0; x < visitedData.checked.length; x++) {
           list.push(visitedData.checked[x]);
         }
         setChecked(list);
@@ -61,7 +60,7 @@ export default CountryListScreen = () => {
     setSelectedContinent(continent);
     let list = [];
     if (continent !== 'All') {
-      for (x = 0; x < countryData.length; x++) {
+      for (let x = 0; x < countryData.length; x++) {
         if (continent === countryData[x].continent) {
           list.push(countryData[x]);
         }
@@ -102,7 +101,7 @@ export default CountryListScreen = () => {
             saveChecked(null);
           },
         },
-      ]
+      ],
     );
   };
 
@@ -112,27 +111,41 @@ export default CountryListScreen = () => {
   // CHECKBOX - RENDER ITEM
   const renderItem = ({ item }) => {
     return (
-      <Button
-        containerStyle={CountryListStyles.listButtonContainer}
-        buttonStyle={
-          checkedRef.current.includes(item.name)
-            ? CountryListStyles.listButtonChecked
-            : CountryListStyles.listButtonUnchecked
-        }
-        titleStyle={
-          checkedRef.current.includes(item.name)
-            ? CountryListStyles.listButtonTitleChecked
-            : CountryListStyles.listButtonTitleUnchecked
-        }
-        title={item.name}
-        type='outline'
+      <TouchableOpacity
+        style={CountryListStyles.listButtonContainer}
         onPress={() => onPressSetChecked(item.name)}
-      />
+      >
+        <View
+          style={[
+            {
+              borderWidth: 1,
+              borderRadius: 4,
+              paddingVertical: 10,
+              paddingHorizontal: 15,
+              alignItems: 'center',
+              justifyContent: 'center',
+            },
+            checkedRef.current.includes(item.name)
+              ? CountryListStyles.listButtonChecked
+              : CountryListStyles.listButtonUnchecked,
+          ]}
+        >
+          <Text
+            style={
+              checkedRef.current.includes(item.name)
+                ? CountryListStyles.listButtonTitleChecked
+                : CountryListStyles.listButtonTitleUnchecked
+            }
+          >
+            {item.name}
+          </Text>
+        </View>
+      </TouchableOpacity>
     );
   };
 
   return (
-    <SafeAreaView style={CountryListStyles.safeViewContainer}>
+    <SafeAreaView style={CountryListStyles.safeViewContainer} edges={['top']}>
       <StatusBar barStyle='light-content' />
       <View style={CountryListStyles.container}>
         <Header />
@@ -184,3 +197,5 @@ export default CountryListScreen = () => {
     </SafeAreaView>
   );
 };
+
+export default CountryListScreen;

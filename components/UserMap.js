@@ -9,7 +9,7 @@ import UserMapStyles from './../styles/UserMapStyles';
 // JSON DATA
 const countryData = require('./../data/countries.json');
 
-export default UserMap = (props) => {
+const UserMap = (props) => {
   const [currentLat, setCurrentLat] = useState(38);
   const [currentLng, setCurrentLng] = useState(-97);
   const [markers, _setMarkers] = useState([]);
@@ -22,8 +22,8 @@ export default UserMap = (props) => {
   // GET USER LIST OF CHECKED COUNTRIES
   useEffect(() => {
     let list = [];
-    for (x = 0; x < props.searchResultList.length; x++) {
-      for (i = 0; i < countryData.length; i++) {
+    for (let x = 0; x < props.searchResultList.length; x++) {
+      for (let i = 0; i < countryData.length; i++) {
         if (props.searchResultList[x] === countryData[i].name) {
           list.push(countryData[i].latlng);
         }
@@ -66,9 +66,12 @@ export default UserMap = (props) => {
             key={index}
             useLegacyPinView={true}
             coordinate={marker.coords}
+            centerOffset={{ x: 7, y: -16 }}
           />
         ))}
       </MapView>
     </View>
   );
 };
+
+export default UserMap;

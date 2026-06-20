@@ -4,7 +4,7 @@ import { View, Text, Image } from 'react-native';
 // STYLES
 import HeaderStyles from './../styles/HeaderStyles';
 
-export default Header = () => {
+const Header = () => {
   return (
     <View style={HeaderStyles.container}>
       <Text style={HeaderStyles.text}>TRAVEL TRACKER</Text>
@@ -15,3 +15,5 @@ export default Header = () => {
     </View>
   );
 };
+
+export default Header;
